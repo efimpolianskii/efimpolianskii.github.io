@@ -606,7 +606,7 @@ iframe {
   position: relative;
   display: block;
   /*padding: 0 0 0 1em;*/
-  background: #FFFFFF;
+  background: #f3f3f3;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;
@@ -633,7 +633,7 @@ iframe {
 }*/
 /* :checked */
 .tab input:checked ~ .tab-content {
-  max-height: 100vh;
+  max-height: 300vh;
 }
 
 /* Icon */
