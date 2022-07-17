@@ -98,6 +98,18 @@ a.btn-cta-secondary:hover,
   background: #3AAA64;
   font-size: 12px;
 }
+.label-yellow {
+  background: #cbd971;
+  font-size: 12px;
+}
+.label-orange {
+  background: #ffa845;
+  font-size: 12px;
+}
+.label-red {
+  background: #ff4a4a;
+  font-size: 12px;
+}
 a.dotted-link {
   border-bottom: 1px dotted #778492;
   color: #778492;
@@ -606,7 +618,7 @@ iframe {
   position: relative;
   display: block;
   /*padding: 0 0 0 1em;*/
-  background: #f3f3f3;
+  background: #ffffff;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;
