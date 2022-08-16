@@ -645,7 +645,7 @@ iframe {
 }*/
 /* :checked */
 .tab input:checked ~ .tab-content {
-  max-height: 300vh;
+  max-height: 500vh;
 }
 
 /* Icon */
