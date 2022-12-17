@@ -40,7 +40,6 @@ a {
 a:hover {
   text-decoration: underline;
   color: #5f6b77;
-  color: #2d844e;
 }
 a:focus {
   text-decoration: none;
@@ -116,7 +115,7 @@ a.dotted-link {
 }
 a.dotted-link:hover {
   text-decoration: none;
-  color: #49515a;
+  color: #000000;
 }
 /*
 iframe {
@@ -145,7 +144,7 @@ iframe {
   margin-right: 30px;
 }
 .header .profile-content .name {
-  color: #49515a;
+  color: #000000;
   font-size: 38px;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -196,7 +195,7 @@ iframe {
 .section .heading {
   margin-top: 0;
   margin-bottom: 30px;
-  color: #545e69;
+  color: #000000;
   font-size: 24px;
 }
 .section .content .more-link .fa {
@@ -423,7 +422,7 @@ iframe {
   font-weight: 500;
 }
 .testimonials .item .source .name {
-  color: #939ea9;
+  color: #000000;
   font-weight: 600;
 }
 .testimonials .item .source .title {
@@ -495,7 +494,7 @@ iframe {
   color: #778492;
 }
 .list ul li a:hover {
-  color: #49515a;
+  color: #000000;
 }
 /* Credits */
 .credits ul li {
@@ -508,7 +507,7 @@ iframe {
   color: #778492;
 }
 .credits ul li a:hover {
-  color: #49515a;
+  color: #000000;
 }
 .credits .btn {
   margin-bottom: 15px;
