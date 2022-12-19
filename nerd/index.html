@@ -4,7 +4,7 @@
     <meta name="description" content>
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Prototype</title>
+    <title>Blog Template · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -18,10 +18,11 @@
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
-
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="fonts/safari-pinned-tab.svg" color="#712cf9">
-
+<link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -86,6 +87,15 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      #test{
+        background-image: url("images/you_belong_here.png");
+      }
+      #test img{
+        width: 10%;
+      }
+      .container p, h1, h2, h3, div{
+        text-align: left;
+      }
     </style>
 
     
@@ -136,14 +146,29 @@
   </header>
 </div>
 
-<main class="container"style="padding-top: 50px;">
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4" style="font-family: 'Ubuntu';">Ultrices sagittis orci a scelerisque purus</h1>
-      <p class="lead my-3">Iaculis urna id volutpat lacus laoreet non curabitur gravida.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+<main class="container" style="padding-top: 50px;">
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="pb-3">
+          <h1 class="display-4" style="font-family: 'Ubuntu';">Ultrices sagittis orci a scelerisque purus</h1>
+          <p class="lead my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique senectus et netus et malesuada fames ac turpis. Velit sed ullamcorper morbi tincidunt. Semper viverra nam libero justo. Neque egestas congue quisque egestas diam in arcu cursus. Fusce id velit ut tortor pretium viverra suspendisse potenti. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Ut diam quam nulla porttitor massa id neque. Quam lacus suspendisse faucibus interdum. Enim sed faucibus turpis in.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-auto position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">WebDev</strong>
+            <h3 class="mb-0" style="font-family: 'Ubuntu';">Ultrices dui sapien</h3>
+            <div class="mb-1 text-muted">Jan 1</div>
+            <p>Sapien nec sagittis aliquam malesuada. Semper viverra nam libero justo laoreet sit amet. Cras ornare arcu dui vivamus. Augue eget arcu dictum varius duis at consectetur lorem. Commodo quis imperdiet massa tincidunt nunc pulvinar. Gravida dictum fusce ut placerat orci nulla. Amet massa vitae tortor condimentum lacinia quis.</p>
+            <p>Fames ac turpis egestas sed tempus urna. Quam viverra orci sagittis eu volutpat odio facilisis mauris. Accumsan in nisl nisi scelerisque eu ultrices vitae. Ultrices eros in cursus turpis massa tincidunt dui ut. Non tellus orci ac auctor augue mauris augue.</p>
+            <a href="#" class="stretched-link">Continue reading</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+
 
     <div class="row mb-2">
       <div class="col-md-6">
@@ -156,8 +181,7 @@
             <a href="#" class="stretched-link">Continue reading</a>
           </div>
           <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">IMG here</text></svg>
-
+            <img src="https://images.unsplash.com/photo-1531185352319-8140fe37bc4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80" alt="" width="200" height="250">
           </div>
         </div>
       </div>
@@ -171,12 +195,12 @@
             <a href="#" class="stretched-link">Continue reading</a>
           </div>
           <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">IMG here</text></svg>
-
+            <img src="https://images.unsplash.com/photo-1590219064212-2afc410c1219?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" width="200" height="250">
           </div>
         </div>
       </div>
     </div>
+    
 
   <div class="row g-5">
     <div class="col-md-8">
@@ -196,7 +220,7 @@
 
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn btn-outline-primary rounded-pill" href="#" style="font-family: 'Ubuntu';">Older</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled" style="font-family: 'Ubuntu';">Newer</a>
+        <a class="btn btn-outline-secondary rounded-pill" href="#" style="font-family: 'Ubuntu';">Newer</a>
       </nav>
 
       <div class="row mb-2">
@@ -272,6 +296,39 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">News</strong>
+          <h3 class="mb-0" style="font-family: 'Ubuntu';">Placerat duis</h3>
+          <div class="mb-1 text-muted">Jan 1</div>
+          <p class="card-text mb-auto">Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">IMG here</text></svg>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">WebDev</strong>
+          <h3 class="mb-0" style="font-family: 'Ubuntu';">Ultrices dui sapien</h3>
+          <div class="mb-1 text-muted">Jan 1</div>
+          <p class="mb-auto">Nisi scelerisque eu ultrices vitae auctor. Elit eget gravida cum sociis.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">IMG here</text></svg>
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
