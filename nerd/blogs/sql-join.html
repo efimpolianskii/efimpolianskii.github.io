@@ -1,0 +1,559 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5726911142858125"
+    crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZW3F596G5R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZW3F596G5R');
+  </script>
+    
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>$(function(){$("#footer").load("../parts/footer.html");});</script> <!--Loading Footer-->
+  <script>$(function(){$("#navbar").load("../parts/navbar.html");});</script> <!--Loading Navbar-->
+  <script>$(function(){$("#links").load("../parts/links.html");});</script> <!--Loading Links-->
+
+    
+    <link rel="stylesheet" href="../css/style.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hello colleagues! Today I decided to write probably the most selective tutorial on the web on the topic of LEFT JOIN in SQL. The point is that I chose this topic for a reason. Joining tables always raises the most questions for beginners about the logic and mechanism of application, and this section of the query language is very important. In my experience, 95% of the queries that I made over the long 10 years in IT included exactly the JOIN construct.">
+    <meta name="author" content="BecomingNerd">
+    <meta name="keywords" content="Left Join, Join in SQL, Detailed Explanation, left join sql, left join explanation, left join postgre, left join guide, detailed guide left join sql">
+    <meta name="generator" content="">
+    <title>Left Join in SQL | The Most Detailed Explanation and Guide Ever</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+        <!-- Favicons -->
+
+    <link rel="icon" href="../images/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="../images/favicon.ico" sizes="16x16" type="image/png">
+    <link rel="mask-icon" color="#808080">
+    <link rel="icon" href="../images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha512-3M00D/rn8n+2ZVXBO9Hib0GKNpkm8MSUU/e2VNthDyBYxKWG+BftNYYcuEjXlyrSO637tidzMBXfE7sQm0INUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="theme-color" content="#808080">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+  </head>
+  <body>
+
+<style>
+
+pre {
+  background-color: #f4f4f4;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.code-block {
+  position: relative;
+}
+
+#copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.hover-window {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 150px;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+}
+
+.hover-window:hover .hover-content {
+  display: block;
+}
+
+
+    </style>
+    
+<div id="navbar"></div>
+
+	<div class="progress-container">
+		<div class="progress-bar" id="myBar"></div>
+	</div>
+
+<main class="container" style="padding-top: 50px;">
+    
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h1 class="blog-post-title mb-1">Left Join in SQL | The Most Detailed Explanation and Guide Ever</h1>
+        <span><p class="blog-post-meta">March 10, 2023 • 100% Human Written</p></span>
+
+        <p>Hello colleagues! Today I decided to write probably the most selective tutorial on the web on the topic of LEFT JOIN in SQL. The point is that I chose this topic for a reason. Joining tables always raises the most questions for beginners about the logic and mechanism of application, and this section of the query language is very important. In my experience, 95% of the queries that I made over the long 10 years in IT included exactly the JOIN construct.</p>
+        <p>We will analyze LEFT JOIN not because it is most often asked about in interviews or it is most often found in test tasks, but using this construction as an example, we will understand the logic of applying and building queries with the JOIN keyword. I have divided the explanation into several sections in order to make it clear to everyone, finding an approach to each.</p>
+        
+        <p><a href="https://nordvpn.sjv.io/c/3876500/512107/7452?subId1=becomingnerd"><img src="../blogs/images/nordvpn.jpeg" style="padding: 10px 0;"/></a></p>
+
+        <h2>Example Explanation</h2>
+        <p>So, imagine our two sets or, in simple terms, tables. The first table [employees] contains first names, last names, and a unique user ID in the database.</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">emp_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>John</td>
+              <td>Smith</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jane</td>
+              <td>Doe</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Bob</td>
+              <td>Johnson</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The second table [departments] contains information about which employee works in which department and also a unique identifier (by the way, similar data separations are made from the information security logic and more reasonable resource management of servers and databases)</p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">emp_id</th>
+              <th scope="col">department_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>HR</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>IT</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Sales</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Now let's try to join these two tables using LEFT JOIN. We have a common data column [emp_id], and the merging will take place just on it. For now, let's select all the columns for clarity. Let's build a query like this:</p>
+
+        <div class="code-block">
+          <pre><code>
+  SELECT *
+    FROM employees
+    LEFT JOIN departments ON employees.emp_id = departments.emp_id;            
+          </code></pre>
+          <button id="copy-btn" onclick="copyCode()" class="btn btn-outline-dark btn-sm">Copy Query</button>
+        </div>
+
+        <p>What will happen? Technically, we've taken each row from the second table (the one after the JOIN statement) and mapped it to a common column. This is how the tables were joined.</p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">emp_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col">emp_id</th>
+              <th scope="col">department_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="table-success">1</th>
+              <td>John</td>
+              <td>Smith</td>
+              <th scope="row" class="table-success">1</th>
+              <td>HR</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-success">2</th>
+              <td>Jane</td>
+              <td>Doe</td>
+              <th scope="row" class="table-success">2</th>
+              <td>IT</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-success">3</th>
+              <td>Bob</td>
+              <td>Johnson</td>
+              <th scope="row" class="table-success">3</th>
+              <td>Sales</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Of course, we don’t need two identical columns, so we boldly limit the columns we need after the SELECT statement.</p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">emp_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col" class="table-danger">emp_id</th>
+              <th scope="col">department_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>John</td>
+              <td>Smith</td>
+              <th scope="row" class="table-danger">1</th>
+              <td>HR</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jane</td>
+              <td>Doe</td>
+              <th scope="row" class="table-danger">2</th>
+              <td>IT</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Bob</td>
+              <td>Johnson</td>
+              <th scope="row" class="table-danger">3</th>
+              <td>Sales</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>And finally get the result:</p>
+        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">emp_id</th>
+              <th scope="col">first_name</th>
+              <th scope="col">last_name</th>
+              <th scope="col">department_name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>John</td>
+              <td>Smith</td>
+              <td>HR</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jane</td>
+              <td>Doe</td>
+              <td>IT</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Bob</td>
+              <td>Johnson</td>
+              <td>Sales</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Euler Diagram</h2>
+        <p>If you've never heard of the Euler diagram before, don't panic, I'll briefly. In a left join, we have two sets, A and B. Set A represents the left table, and set B represents the right table. The common column that we use to join the two tables is represented by the overlapping area between the two sets. I made a picture below by myself, so don't be picky.</p>
+        <center><img src="../blogs/images/SQL - Left Join.png" alt='SQL - Left Join' style="width: 75%;"></center>
+        <p class="image-desc text-center">SQL - Left Join</p> 
+        <p>Let's briefly revisit our previous examples and two tables [employees, departments]. To perform a left join between the [employees] and [departments] tables, we start with the left table, which is the [employees] table. We then draw a circle to represent the set A, which contains all the employees in the table. We then draw a second circle to represent the set B, which contains all the departments in the [departments] table. We then draw an overlapping area between the two circles to represent the common column, which is the [emp_id] column.</p>
+        <center><img src="../blogs/images/SQL - Left Join Detailed Version.png" alt='SQL - Left Join Detailed Version'></center>
+        <p class="image-desc text-center">SQL - Left Join Detailed Version</p> 
+        <p>In this example, we want to join the two tables on the [departments] column. We include all the rows from the left table, which is the [employees] table, and match them with the matching rows from the right table, which is the [departments] table.</p>
+        <p>When we perform the left join, we keep all the rows from set A, which is the [employees] table, and match them with the matching rows from set B, which is the [departments] table. If there is no match, we include a row with NULL values for the right table columns.</p>
+      
+        <h2>Example</h2>
+        <p>Suppose you are organizing a party and you have two lists: one contains the names of all the people you invited, and the other contains the names of the people who RSVP'd. You want to know who is coming to the party and who isn't.</p>
+        <p>To do this, you can perform a left join between the two lists, keeping all the names from the invitation list, even if they didn't RSVP. The result will include all the names from the invitation list, with the corresponding RSVP status (if any), or NULL values if the person didn't RSVP.</p>
+        <p>So this example can be illustrated using Euler diagrams. (I hope you don't go crazy with my schemes)</p>
+        <center><img src="../blogs/images/SQL - Left Join Example.png" alt='SQL - Left Join Example' style="width: 75%;"></center>
+        <p class="image-desc text-center">SQL - Left Join Example</p> 
+        <p>As you can see, the left join keeps all the names from the invitation list, even if they didn't RSVP. The result includes the name of each person, along with their RSVP status (if any), or NULL values if they didn't RSVP. This can help you keep track of who is coming to the party and who isn't.</p>
+        <h2>One More Example</h2>
+        <p>Let me give you <strong>another example</strong> to make it clearer. Suppose you are a teacher and you have two lists: one contains the names of all the students in your class, and the other contains the grades for a recent exam. You want to know the grade for each student, even if they didn't take the exam.</p>
+        <p>To do this, you can perform a left join between the two lists, keeping all the names from the student list, even if they didn't take the exam. The result will include all the names from the student list, with the corresponding grade (if any), or NULL values if the student didn't take the exam.</p>
+        <p>So, we have students table</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">student_id</th>
+              <th scope="col">name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="table-success">1</th>
+              <td class="table-success">Ann</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-success">2</th>
+              <td class="table-success">Bob</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-success">3</th>
+              <td class="table-success">Tim</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Mike</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Harry</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>And we have garades table:</p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">student_id</th>
+              <th scope="col">grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>61</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>89</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>11</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Combining the tables using the above algorithm, we get the following table, where it is logical to conclude that students with student_id 5 and 6, namely Mike and Hary, were not present at the exam, since they have NULL values in the grade column.</p>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">student_id</th>
+              <th scope="col">name</th>
+              <th scope="col">grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Ann</td>
+              <td>61</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Bob</td>
+              <td>89</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Tim</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-danger">4</th>
+              <td class="table-danger">Mike</td>
+              <td class="table-danger">NULL</td>
+            </tr>
+            <tr>
+              <th scope="row" class="table-danger">5</th>
+              <td class="table-danger">Harry</td>
+              <td class="table-danger">NULL</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2>Multiple Joins</h2>
+        <p>Of course, you can join not only two tables, two sets of data, but also several (as much as you want). It is important to remember that the logic and construction of the query, the syntax, is absolutely the same. Let's look at examples of sets. I think it will be clearer.</p>
+        <p>The most classic bunch of sets (tables) is the relationship of one table to several others. Such a bunch is called - One to many</p>
+        <center><img src="../blogs/images/SQL - Left Join Multiple Joins - One to Many.png" alt='SQL - Left Join Multiple Joins - One to Many' style="width: 75%;"></center>
+        <p class="image-desc text-center">SQL - Left Join Multiple Joins - One to Many</p> 
+        <p>Everything is simple here - the set [employees] has one common column with a table [departments] and a [salaries] table. So they are connected and a query is built on this, which will look like this:</p>
+        <div class="code-block">
+          <pre><code>
+  SELECT *
+    FROM employees
+    JOIN departments ON departments.department_id = employees.department_id
+    JOIN salaries ON salaries.department_id = employees.department_id;
+                      
+          </code></pre>
+          <button id="copy-btn" onclick="copyCode()" class="btn btn-outline-dark btn-sm">Copy Query</button>
+        </div>
+
+        <p>There are other types of linkages, such as many-to-one or many-to-many relations. Their names are completely optional to remember, just do not be surprised when you see similar names in any literature.</p>
+        <center><img src="../blogs/images/SQL - Left Join Multiple Joins - Many to One.png" alt='SQL - Left Join Multiple Joins - Many to One' style="width: 75%;"></center>
+        <p class="image-desc text-center">SQL - Left Join Multiple Joins - Many to One</p> 
+        <p>At their core, they differ only in the number of so-called connectives, in other words, in the number of common columns with which connections could be made. So the query for a many-to-one relationship would look like this:</p>
+        <div class="code-block">
+          <pre><code>
+  SELECT *
+    FROM employees
+    JOIN salaries ON salaries.emp_id = employees.emp_id
+    JOIN departments ON department_id.emp_id = employee.emp_id;
+                      
+          </code></pre>
+          <button id="copy-btn" onclick="copyCode()" class="btn btn-outline-dark btn-sm">Copy Query</button>
+        </div>
+        <center><img src="../blogs/images/SQL - Left Join Multiple Joins - Many to Many.png" alt='SQL - Left Join Multiple Joins - Many to Many'></center>
+        <p class="image-desc text-center">SQL - Left Join Multiple Joins - Many to Many</p> 
+        <p>Following exactly the same logic, a query for sets with a many-to-many relationship would look like this:</p>
+        <div class="code-block">
+          <pre><code>
+  SELECT *
+    FROM employees
+    JOIN departments ON departments.department_id = employees.department_id
+    JOIN salaries ON salaries.employee_id = employees.employee_id
+    JOIN managers ON managers.employee_id = employees.employee_id;     
+          </code></pre>
+          <button id="copy-btn" onclick="copyCode()" class="btn btn-outline-dark btn-sm">Copy Query</button>
+        </div>
+        <p>By the way, in my 10 years of experience in IT, I rarely used such a bunch. The main thing I want to convey to you is that don't get scared when you need to join more than two tables. Absolutely the same logic works here, just more lines of code. The main thing is to find common columns and work with them.</p>
+        <h2>Short Conclusion</h2>
+        <p>I hope I managed to convey the main logic to you. My goal was not to teach you syntax, you can find it anywhere, in courses or free tutorials on the Internet. I just tried to build in your head the logic of building such queries. Hope I got it. Good luck with your learning!</p>
+
+      </article>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="../search.html" style="font-family: 'Ubuntu';">More</a>
+      </nav>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+
+        <div>
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">New</strong>
+              <h3 class="mb-0" style="font-family: 'Ubuntu';">List of 5 Best SQL Learning Resources IMHO</h3>
+              <div class="mb-1 text-muted">Dec 23</div>
+              <p class="card-text mb-auto">Without the words about importance SQL and its popularity, I start my list...</p>
+              <a href="../blogs/learning-SQL.html" class="stretched-link">Continue reading</a>
+            </div>
+          </div>
+      </div>
+      <div>
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Popular</strong>
+            <h3 class="mb-0" style="font-family: 'Ubuntu';">Is SQL Worth Learning in 2023? 5 Reasons to Learn SQL</h3>
+            <div class="mb-1 text-muted">Feb 3</div>
+            <p class="card-text mb-auto">SQL is used in many jobs in IT. Literally every specialist, whether he is junior or senior, whether...</p>
+            <a href="../blogs/worth-SQL.html" class="stretched-link">Continue reading</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Popular</strong>
+            <h3 class="mb-0" style="font-family: 'Ubuntu';">3 Smart Steps to Junior Data Analyst</h3>
+            <div class="mb-1 text-muted">Jan 22</div>
+            <p class="card-text mb-auto">Today I want to talk about the stack of professions in the data field. Yes, in the title I mentioned Data Analyst, since I will rest on this specialty...</p>
+            <a href="../blogs/data-analyst.html" class="stretched-link">Continue reading</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Popular</strong>
+            <h3 class="mb-0" style="font-family: 'Ubuntu';">Top 5 hard skills to get any job you like in IT</h3>
+            <div class="mb-1 text-muted">Jan 11</div>
+            <p class="card-text mb-auto">The list presented in this article is my opinion. It can...</p>
+            <a href="../blogs/best-hard-skills.html" class="stretched-link">Continue reading</a>
+          </div>
+        </div>
+    </div>
+    <div>
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">New</strong>
+          <h3 class="mb-0" style="font-family: 'Ubuntu';">Free courses to start a career in IT</h3>
+          <div class="mb-1 text-muted">Jan 12</div>
+          <p class="card-text mb-auto">Most recently, I did the top skills that you can learn to get a coveted job in IT without any problems....</p>
+          <a href="../blogs/free-courses.html" class="stretched-link">Continue reading</a>
+        </div>
+      </div>
+    </div>
+        
+        
+        <div id="links"></div>
+        
+      </div>
+    </div>
+    
+  </div>
+</main>
+<div id="footer"></div>
+<script>
+function copyCode() {
+  /* Get the text inside the code block */
+  var code = document.querySelector("pre code");
+  var text = code.innerText;
+  
+  /* Create a temporary input element */
+  var tempInput = document.createElement("input");
+  tempInput.setAttribute("value", text);
+  document.body.appendChild(tempInput);
+  
+  /* Select the text inside the input element */
+  tempInput.select();
+  document.execCommand("copy");
+  
+  /* Remove the temporary input element */
+  document.body.removeChild(tempInput);
+  
+  /* Update the button text */
+  var copyBtn = document.getElementById("copy-btn");
+  copyBtn.textContent = "Copied!";
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="becomingnerd" data-description="Support BecomingNerd on Buy me a coffee!" data-message="" data-color="#808080" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body></html>
